@@ -23,19 +23,10 @@ js/events.js   # event data
 js/app.js      # rendering, search/filter, dialog, validation
 ```
 
-## Run locally
-Open `index.html` in a browser, or serve the folder:
-```
-python -m http.server 8000   # then visit http://localhost:8000
-```
 
 ## Deploy
 - **GitHub Pages:** Settings → Pages → Deploy from branch `main` / root.
-- **Netlify / Vercel:** import the repo; no build command, publish directory `/`.
-
-## Screenshots
-Add screenshots to `assets/` and link them here:
-`![Home](assets/home.png)` `![Events](assets/events.png)`
+- **Netlify / Vercel:** 
 
 ## Author
-Your Name · your-github-username
+Archit Ranjan Agarwal
