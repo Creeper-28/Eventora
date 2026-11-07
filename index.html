@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eventora - discover, explore and register for upcoming events.">
+  <title>Eventora | Discover & Register for Events</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎟️%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a href="#home" class="logo">Event<span>ora</span></a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#register" class="btn btn-sm">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <p class="eyebrow">Workshops · Concerts · Hackathons · Meetups</p>
+        <h1>Find the events worth <em>showing up</em> for.</h1>
+        <p class="lead">Eventora brings the best upcoming events together in one place. Browse, search, and secure your spot in under a minute.</p>
+        <div class="hero-actions">
+          <a href="#events" class="btn">Explore Events</a>
+          <a href="#featured" class="btn btn-ghost">See Featured</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="featured" aria-labelledby="feat-h">
+      <h2 id="feat-h">Featured events</h2>
+      <p class="sub">Hand-picked highlights you shouldn't miss.</p>
+      <div class="grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="section alt" id="events" aria-labelledby="ev-h">
+      <div class="container">
+        <h2 id="ev-h">Upcoming events</h2>
+        <div class="toolbar">
+          <label class="search"><span class="sr">Search events by name</span>
+            <input type="search" id="search" placeholder="Search events by name…" autocomplete="off">
+          </label>
+          <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+        </div>
+        <p class="count" id="count" role="status" aria-live="polite"></p>
+        <div class="grid" id="eventGrid"></div>
+        <div class="empty" id="empty" hidden>
+          <p class="empty-icon" aria-hidden="true">🔍</p>
+          <h3>No events found</h3>
+          <p>Try a different keyword or category.</p>
+          <button class="btn btn-sm" id="reset">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container narrow" id="register" aria-labelledby="reg-h">
+      <h2 id="reg-h">Register for an event</h2>
+      <p class="sub">Fill in your details to reserve your spot.</p>
+      <form id="regForm" novalidate>
+        <div class="field"><label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <p class="err" id="name-err"></p></div>
+        <div class="field"><label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <p class="err" id="email-err"></p></div>
+        <div class="field"><label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 98765 43210" required>
+          <p class="err" id="phone-err"></p></div>
+        <div class="field"><label for="eventSel">Select event</label>
+          <select id="eventSel" name="event" required></select>
+          <p class="err" id="eventSel-err"></p></div>
+        <button class="btn" type="submit">Confirm registration</button>
+      </form>
+      <div class="success" id="success" role="status" tabindex="-1" hidden></div>
+    </section>
+  </main>
+
+  <dialog id="detail" aria-labelledby="d-title">
+    <button class="close" id="dClose" aria-label="Close details">&times;</button>
+    <img id="dImg" alt="">
+    <div class="d-body">
+      <span class="tag" id="dCat"></span>
+      <h2 id="d-title"></h2>
+      <ul class="meta" id="dMeta"></ul>
+      <p id="dDesc"></p>
+      <button class="btn" id="dReg">Register Now</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <p><strong>Eventora</strong> · Built with HTML, CSS &amp; JavaScript</p>
+      <p>Demo project: registrations are not sent to a server.</p>
+    </div>
+  </footer>
+
+  <script src="js/events.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
